@@ -68,7 +68,7 @@ static char client_id[BUFFER_SIZE];
 static char pub_topic[BUFFER_SIZE];
 static char sub_topic[BUFFER_SIZE];
 
-static char* sensorId = "Hum1";
+static char* sensorId = "Hum2";
 
 //static double temperature = 23.0;
 static double humidity = 35.0;
