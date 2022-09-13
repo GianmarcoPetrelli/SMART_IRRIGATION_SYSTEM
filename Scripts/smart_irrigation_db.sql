@@ -97,7 +97,7 @@ CREATE TABLE `SensorDevice` (
 
 LOCK TABLES `SensorDevice` WRITE;
 /*!40000 ALTER TABLE `SensorDevice` DISABLE KEYS */;
-INSERT INTO `SensorDevice` VALUES ('Hum2','Act2','Zone2','fd00::212:4b00:f82:104a','(22;22)'),('Tem2','Act2','Zone2','fd00::212:4b00:f82:3b12','(21;21)'),('TempHum1','Act1','Zone1','fd00::212:4b00:f82:15f1','(11;11)');
+INSERT INTO `SensorDevice` VALUES ('Hum2','Act2','Zone2','fd00::212:4b00:f82:104a','(22;22)'),('Temp2','Act2','Zone2','fd00::212:4b00:f82:3b12','(21;21)'),('TempHum1','Act1','Zone1','fd00::212:4b00:f82:15f1','(11;11)');
 /*!40000 ALTER TABLE `SensorDevice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,5 +161,10 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DROP USER IF EXISTS 'JavaCollector'@'localhost';
+flush privileges;
+CREATE USER 'JavaCollector'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'JavaCollector'@'localhost' WITH GRANT OPTION;
 
 -- Dump completed on 2022-09-10 20:56:18
